@@ -1,12 +1,26 @@
 // fetch value as number
 function amountValue(id) {
     const amount = parseFloat(document.getElementById(id).value);
-    if (!isNaN(amount)) {
+    if (!isNaN(amount) && (!(amount < 0))) {
+        document.getElementById(id + "Error").hidden = true;
         return amount;
+
     } else {
-        console.log("invalid input for " + id);
+        errorMsg(id);
+        document.getElementById("expenses").innerText = 0;
+        document.getElementById("balance").innerHTML = 0;
+        document.getElementById("savingsAmount").innerText = 0;
+        document.getElementById("balanceAfterSavings").innerText = 0;
+        document.getElementById("savingsErrorMsg").hidden = true;
+
     }
 }
+
+// error msg show 
+function errorMsg(id) {
+    document.getElementById(id + "Error").hidden = false;
+}
+
 
 // calculate total expense and balance 
 function calculate(income, food, rent, clothes) {

@@ -38,6 +38,9 @@
                             <p class="my-auto text-right ">Income:</p>
                             <input id="income" class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
                         </div>
+                        <div id="incomeError" class="text-red-700 font-bold my-3 text-center" hidden>
+                            <p>Error in Income</p>
+                        </div>
                     </div>
                     <!-- income end  -->
 
@@ -48,13 +51,22 @@
                             <p class="my-auto text-right ">Food:</p>
                             <input id="food" class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
                         </div>
+                        <div id="foodError" class="text-red-700 font-bold my-3 text-center" hidden>
+                            <p>Error in food</p>
+                        </div>
                         <div class="grid grid-cols-3 mb-2 ">
                             <p class="my-auto text-right ">Rent:</p>
                             <input id="rent" class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
                         </div>
+                        <div id="rentError" class="text-red-700 font-bold my-3 text-center" hidden>
+                            <p>Error in rent</p>
+                        </div>
                         <div class="grid grid-cols-3 mb-2 ">
                             <p class="my-auto text-right ">Clothes:</p>
                             <input id="clothes" class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
+                        </div>
+                        <div id="clothesError" class="text-red-700 font-bold my-3 text-center" hidden>
+                            <p>Error in clothes</p>
                         </div>
                     </div>
                     <!-- expense input end -->
@@ -70,6 +82,9 @@
                         </div>
                         <div>
                             <h6 class="text-xl font-semibold text-center ">Balance: <span id="balance">0</span></h6>
+                        </div>
+                        <div id="balanceError" class="text-red-700 font-bold my-3 text-center" hidden>
+                            <p>Insufficient Balance</p>
                         </div>
                     </div>
                     <!-- result area end -->
@@ -92,7 +107,7 @@
                             <h6 class="text-xl font-semibold text-center ">Saving Amount: <span id="savingsAmount">0</span></h6>
                         </div>
                         <div>
-                            <h6 id="balanceAfterSavings" class="text-xl font-semibold text-center ">Remaining Amount: <span>0</span></h6>
+                            <h6 class="text-xl font-semibold text-center ">Remaining Amount: <span id="balanceAfterSavings">0</span></h6>
                         </div>
                         <div id="savingsErrorMsg" class="text-red-700 font-bold my-3 text-center" hidden>
                             <p>Savings not Possible</p>
