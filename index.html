@@ -80,19 +80,22 @@
                         <p class="my-auto text-right ">Save:</p>
                         <input id="savingsPercentage" class="my-auto h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
                         <p class="my-auto text-center ">%</p>
-                        <button class="bg-sky-400 px-4 py-1 border rounded-md col-span-2 ">Save</button>
+                        <button id="save" class="bg-sky-400 px-4 py-1 border rounded-md col-span-2 " disabled>Save</button>
                     </div>
                     <!-- savings area end -->
 
 
                     <!-- savings result -->
 
-                    <div class="my-3 ">
+                    <div class="my-3">
                         <div>
-                            <h6 class="text-xl font-semibold text-center ">Saving Amount: <span>4500</span></h6>
+                            <h6 class="text-xl font-semibold text-center ">Saving Amount: <span id="savingsAmount">0</span></h6>
                         </div>
                         <div>
-                            <h6 class="text-xl font-semibold text-center ">Remaining Amount: <span>4500</span></h6>
+                            <h6 id="balanceAfterSavings" class="text-xl font-semibold text-center ">Remaining Amount: <span>0</span></h6>
+                        </div>
+                        <div id="savingsErrorMsg" class="text-red-700 font-bold my-3 text-center" hidden>
+                            <p>Savings not Possible</p>
                         </div>
                     </div>
                     <!-- savings result end -->

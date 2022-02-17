@@ -18,19 +18,40 @@ function calculate(income, food, rent, clothes) {
     } else {
         document.getElementById("expenses").innerText = expenses;
         document.getElementById("balance").innerHTML = balance;
-        return balance;
+        // return balance;
+        document.getElementById("save").disabled = false;
+    }
+}
+
+// savings calculation 
+function savings() {
+    const balance = parseFloat(document.getElementById("balance").innerText);
+    const savingsPercentage = parseFloat(document.getElementById("savingsPercentage").value);
+    if (balance > 0 && savingsPercentage >= 0) {
+        const savingsAmount = (balance * savingsPercentage) / 100;
+        const balanceAfterSavings = balance - savingsAmount;
+        document.getElementById("savingsAmount").innerText = savingsAmount;
+        document.getElementById("balanceAfterSavings").innerText = balanceAfterSavings;
+        document.getElementById("savingsErrorMsg").hidden = true;
+    } else {
+        document.getElementById("savingsErrorMsg").removeAttribute("hidden");
     }
 }
 
 
-// click event 
+// click event for calculate
 document.getElementById("calculate").addEventListener('click', function() {
     const income = amountValue("income");
     const food = amountValue("food");
     const rent = amountValue("rent");
     const clothes = amountValue("clothes");
 
-    if (!isNaN(income) || income >= 0 || !isNaN(food) || food >= 0 || !isNaN(rent) || rent >= 0 || !isNaN(clothes) || clothes >= 0) {
-        const balance = calculate(income, food, rent, clothes);
+    if (!isNaN(income) && income >= 0 && !isNaN(food) && food >= 0 && !isNaN(rent) && rent >= 0 && !isNaN(clothes) && clothes >= 0) {
+        calculate(income, food, rent, clothes);
     }
+})
+
+// click event for savings
+document.getElementById("save").addEventListener('click', function() {
+    savings();
 })
