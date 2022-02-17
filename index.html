@@ -6,51 +6,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 5</title>
+    <!-- tailwind cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
 </head>
 
 <body>
-
+    <!-- header area start -->
     <header>
         <h1 class="text-3xl font-bold text-sky-500 text-center">Expense Tracker </h1>
     </header>
+    <!-- header area end -->
 
+    <!-- main start  -->
     <main>
         <section class="grid grid-cols-1 gap-2 md:grid-cols-2 my-4 ">
+            <!-- img  -->
             <article>
                 <img src="resources/financial-4560047_1920.jpg " alt=" ">
             </article>
+            <!-- img end  -->
+
+            <!-- calc part  -->
             <article class="px-4 ">
                 <div class="p-4 bg-gray-100 ">
+                    <!-- income  -->
                     <div>
                         <h1 class="text-center text-xl font-medium mb-2 ">Income</h1>
                         <div class="grid grid-cols-3 mb-2 ">
                             <p class="my-auto text-right ">Income:</p>
-                            <input class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
+                            <input id="income" class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
                         </div>
                     </div>
+                    <!-- income end  -->
+
+                    <!-- expense input -->
                     <div>
                         <h1 class="text-center text-xl font-medium mb-2 ">Expenses</h1>
                         <div class="grid grid-cols-3 mb-2 ">
                             <p class="my-auto text-right ">Food:</p>
-                            <input class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
+                            <input id="food" class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
                         </div>
                         <div class="grid grid-cols-3 mb-2 ">
                             <p class="my-auto text-right ">Rent:</p>
-                            <input class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
+                            <input id="rent" class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
                         </div>
                         <div class="grid grid-cols-3 mb-2 ">
                             <p class="my-auto text-right ">Clothes:</p>
-                            <input class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
+                            <input id="clothes" class="my-auto w-3/4 h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
                         </div>
                     </div>
+                    <!-- expense input end -->
                     <div class="flex justify-center my-3 ">
-                        <button class="bg-sky-400 px-4 py-1 border rounded-md ">
+                        <button id="calculate" class="bg-sky-400 px-4 py-1 border rounded-md ">
                             Calculate
                         </button>
                     </div>
+                    <!-- result area  -->
                     <div class="my-3 ">
                         <div>
                             <h6 class="text-xl font-semibold text-center ">Total Expences: <span>4500</span></h6>
@@ -59,12 +72,20 @@
                             <h6 class="text-xl font-semibold text-center ">Balance: <span>4500</span></h6>
                         </div>
                     </div>
-                    <div class="grid grid-cols-6 mb-2 gap-2 ">
+                    <!-- result area end -->
+
+
+                    <!-- savings area  -->
+                    <div class="grid grid-cols-6 mb-2 gap-2">
                         <p class="my-auto text-right ">Save:</p>
-                        <input class="my-auto h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
+                        <input id="savingsPercentage" class="my-auto h-6 border-0 bg-gray-300 ml-1 col-span-2 " type="text ">
                         <p class="my-auto text-center ">%</p>
                         <button class="bg-sky-400 px-4 py-1 border rounded-md col-span-2 ">Save</button>
                     </div>
+                    <!-- savings area end -->
+
+
+                    <!-- savings result -->
 
                     <div class="my-3 ">
                         <div>
@@ -74,12 +95,16 @@
                             <h6 class="text-xl font-semibold text-center ">Remaining Amount: <span>4500</span></h6>
                         </div>
                     </div>
-
-
+                    <!-- savings result end -->
                 </div>
             </article>
+            <!-- calc part end -->
         </section>
     </main>
+    <!-- main end  -->
+
+    <!-- js added  -->
+    <script src="js/calculation.js"></script>
 </body>
 
 </html>
