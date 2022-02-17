@@ -38,6 +38,8 @@ function calculate(income, food, rent, clothes) {
         errorMsgShow("balance");
         document.getElementById("savingsAmount").innerText = 0;
         document.getElementById("balanceAfterSavings").innerText = 0;
+        document.getElementById("expenses").innerText = 0;
+        document.getElementById("balance").innerHTML = 0;
     } else {
         document.getElementById("expenses").innerText = expenses;
         document.getElementById("balance").innerHTML = balance;
@@ -50,7 +52,7 @@ function calculate(income, food, rent, clothes) {
 function savings() {
     const balance = parseFloat(document.getElementById("balance").innerText);
     const savingsPercentage = parseFloat(document.getElementById("savingsPercentage").value);
-    if (balance > 0 && savingsPercentage >= 0) {
+    if (balance > 0 && savingsPercentage >= 0 && savingsPercentage <= 100) {
         const savingsAmount = (balance * savingsPercentage) / 100;
         const balanceAfterSavings = balance - savingsAmount;
         document.getElementById("savingsAmount").innerText = savingsAmount;
