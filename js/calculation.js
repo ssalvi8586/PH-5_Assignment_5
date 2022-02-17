@@ -2,23 +2,30 @@
 function amountValue(id) {
     const amount = parseFloat(document.getElementById(id).value);
     if (!isNaN(amount) && (!(amount < 0))) {
-        document.getElementById(id + "Error").hidden = true;
+        errorMsgHide(id);
+        errorMsgHide("balance");
+        errorMsgHide("savings");
         return amount;
 
     } else {
-        errorMsg(id);
+        errorMsgShow(id);
+        errorMsgHide("balance");
+        errorMsgHide("savings");
         document.getElementById("expenses").innerText = 0;
         document.getElementById("balance").innerHTML = 0;
         document.getElementById("savingsAmount").innerText = 0;
         document.getElementById("balanceAfterSavings").innerText = 0;
-        document.getElementById("savingsErrorMsg").hidden = true;
 
     }
 }
 
 // error msg show 
-function errorMsg(id) {
+function errorMsgShow(id) {
     document.getElementById(id + "Error").hidden = false;
+}
+// error msg hide 
+function errorMsgHide(id) {
+    document.getElementById(id + "Error").hidden = true;
 }
 
 
@@ -28,7 +35,9 @@ function calculate(income, food, rent, clothes) {
     const balance = income - expenses;
 
     if (balance < 0) {
-        console.log("insufficient Balance");
+        errorMsgShow("balance");
+        document.getElementById("savingsAmount").innerText = 0;
+        document.getElementById("balanceAfterSavings").innerText = 0;
     } else {
         document.getElementById("expenses").innerText = expenses;
         document.getElementById("balance").innerHTML = balance;
@@ -46,9 +55,11 @@ function savings() {
         const balanceAfterSavings = balance - savingsAmount;
         document.getElementById("savingsAmount").innerText = savingsAmount;
         document.getElementById("balanceAfterSavings").innerText = balanceAfterSavings;
-        document.getElementById("savingsErrorMsg").hidden = true;
+        document.getElementById("savingsError").hidden = true;
     } else {
-        document.getElementById("savingsErrorMsg").removeAttribute("hidden");
+        document.getElementById("savingsError").removeAttribute("hidden");
+        document.getElementById("savingsAmount").innerText = 0;
+        document.getElementById("balanceAfterSavings").innerText = 0;
     }
 }
 
